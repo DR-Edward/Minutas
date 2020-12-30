@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Minutas Manager Dev Demo: **[http://dev-minutas.dredward.site](http://uat-minutas.dredward.site)**
+## Minutas Manager Dev Demo: **[http://dev-minutas.dredward.site](http://dev-minutas.dredward.site)**
 
 ## Notas
 
