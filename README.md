@@ -7,56 +7,28 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Minutas Manager Dev Demo: **[http://dev-minutas.dredward.site](http://uat-minutas.dredward.site)**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Notas
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* El demo utiliza SES de AWS para el envío de correos, el dominio aún se encuentra en el Sandbox, lo que significa qué solo puede envíar emails a los correos especificados.
+* ##### Aún no se crean las migraciones del modelo entidad relación, pero el endpoint para actualizar la información del usuario está funcionando con nombre y email. #####
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+##Development
+| Status  |  Backlog |
+|---|---|
+| done  | Se requiere un WS para el login.
+| done  | Se requiere un WS para registrar un nuevo usuario en el cual, la contraseña deberá de ser guardada de forma encriptada.
+| done  | Se requiere un WS que envíe un correo a la dirección de email del usuario con un código de 6 dígitos random que servirá como contraseña temporal para iniciar sesión.
+| done  | Se requiere un WS para actualizar la información del usuario.
+| done  | Se requiere un WS para actualizar solo la contraseña del usuario, con verificación de la contraseña anterior, si la contraseña no coincide, no podrá actualizar la contraseña.
+| in process  | Se requiere un WS para poder agregar a un amigo a la lista de amigos.
+|   | Se requiere un WS para poder rechazar o aceptar a un amigo.
+|   | Se requiere un WS para poder eliminar un amigo.
+|   | Se requiere un WS que muestre un listado de todos los amigos que el usuario logueado tenga.
+|   | Se requiere un WS que permita la creación de una minuta, cada minuta llevará múltiples acuerdos, múltiples participantes, los cuales podrán ser amigos anteriormente agregados y podrá contener o no evidencias (fotografías).
+|   | Se requiere un WS que muestre un listado de las minutas donde el usuario haya sido participante o creador de la minuta.
+|   | Se requiere un WS para poder actualizar una minuta en la cual el usuario logueado haya sido el creador.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+##Importation
+* Insomnia endpoints collection <a id="raw-url" href="https://raw.githubusercontent.com/github-username/project/master/filename">Download FILE</a>
