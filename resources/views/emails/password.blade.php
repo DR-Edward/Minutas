@@ -7,6 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <p><h5><strong> password temporal es:<strong> {{ $password }}</h5></p>
+  <p><h5><strong> Su password temporal es:<strong> {{ $password }}</h5></p>
 </body>
 </html>
