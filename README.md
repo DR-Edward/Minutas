@@ -31,4 +31,4 @@
 |   | Se requiere un WS para poder actualizar una minuta en la cual el usuario logueado haya sido el creador.
 
 ##Importation
-* Insomnia endpoints collection <a id="raw-url" href="https://github.com/DR-Edward/Minutas/blob/master/importation/dev/Insomnia_2020-12-30.json">Download FILE</a>
+* Insomnia endpoints collection <a id="raw-url" href="https://raw.githubusercontent.com/DR-Edward/Minutas/master/importation/dev/Insomnia_2020-12-30.json">Download FILE</a>
