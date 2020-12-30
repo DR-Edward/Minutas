@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ROUTES -> Auth
 Route::group([
     'prefix' => 'auth', 
     'namespace' => 'App\Http\Controllers\Auth'
@@ -27,4 +28,13 @@ Route::group([
         Route::post('logout', "LoginController@api_logout");
         Route::patch('user/password', "PasswordController@update");
     });
+});
+
+// ROUTES -> Users
+Route::group([
+    'middleware' => 'auth:api',
+    'namespace' => 'App\Http\Controllers\User'
+], function() {
+
+    Route::apiResource('user', 'UserController');
 });
