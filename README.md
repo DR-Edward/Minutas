@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Minutas Manager Dev Demo: **[http://dev-minutas.dredward.site](http://uat-minutas.dredward.site)**
+## Minutas Manager Dev Demo: **[http://dev-minutas.dredward.site](http://dev-minutas.dredward.site)**
 
 ## Notas
 
@@ -30,4 +30,5 @@
 |   | Se requiere un WS para poder actualizar una minuta en la cual el usuario logueado haya sido el creador.
 
 ## Importation
+
 * Insomnia endpoints collection <a id="raw-url" href="https://raw.githubusercontent.com/DR-Edward/Minutas/master/importation/dev/Insomnia_2020-12-31.json">Raw file to download</a>
