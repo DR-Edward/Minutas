@@ -33,7 +33,7 @@ Route::group([
 // ROUTES -> Users
 Route::group([
     'middleware' => 'auth:api',
-    'namespace' => 'App\Http\Controllers\User'
+    'namespace' => 'App\Http\Controllers'
 ], function() {
 
     Route::apiResource('user', 'UserController');

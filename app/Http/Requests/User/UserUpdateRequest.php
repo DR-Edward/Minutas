@@ -25,12 +25,20 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'string', 'max:191'],
+            'name' => ['string', 'max:191'],
+            'apellido_paterno' => ['string', 'max:191'],
+            'apellido_materno' => ['string', 'max:191'],
+            'fecha_nacimiento' => ['date_format:Y-m-d'],
+            'sexo' => ['string', 'max:1'],
+            'imagen' => ['string', 'max:191'],
+            'firma' => ['string', 'max:191'],
+            'token_firebase' => ['string', 'max:191'],
+            'solicitar' => ['boolean'],
             'email' => [
                 'string',
                 'email',
                 'max:191',
-                Rule::unique('users')->ignore($this->id),
+                Rule::unique(User::class),
             ],
         ];
     }
