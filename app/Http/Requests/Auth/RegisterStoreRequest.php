@@ -28,6 +28,14 @@ class RegisterStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:191'],
+            'apellido_paterno' => ['required', 'string', 'max:191'],
+            'apellido_materno' => ['required', 'string', 'max:191'],
+            'fecha_nacimiento' => ['required', 'date_format:Y-m-d'],
+            'sexo' => ['required', 'string', 'max:1'],
+            'imagen' => ['required', 'string', 'max:191'],
+            'firma' => ['required', 'string', 'max:191'],
+            'token_firebase' => ['required', 'string', 'max:191'],
+            'solicitar' => ['required', 'boolean'],
             'email' => [
                 'required',
                 'string',

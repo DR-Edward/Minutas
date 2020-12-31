@@ -12,7 +12,6 @@
 ## Notas
 
 * El demo utiliza SES de AWS para el envío de correos, el dominio aún se encuentra en el Sandbox, lo que significa qué solo puede envíar emails a los correos especificados.
-* ##### Aún no se crean las migraciones del modelo entidad relación, pero el endpoint para actualizar la información del usuario está funcionando con nombre y email. #####
 
 ##Development
 | Status  |  Backlog |
@@ -30,5 +29,5 @@
 |   | Se requiere un WS que muestre un listado de las minutas donde el usuario haya sido participante o creador de la minuta.
 |   | Se requiere un WS para poder actualizar una minuta en la cual el usuario logueado haya sido el creador.
 
-##Importation
-* Insomnia endpoints collection <a id="raw-url" href="https://raw.githubusercontent.com/github-username/project/master/filename">Download FILE</a>
+## Importation
+* Insomnia endpoints collection <a id="raw-url" href="https://raw.githubusercontent.com/DR-Edward/Minutas/master/importation/dev/Insomnia_2020-12-31.json">Raw file to download</a>

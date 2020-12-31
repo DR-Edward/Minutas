@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Http\Requests\User\UserUpdateRequest;
 
-class UserController extends Controller
+class AmigosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -69,15 +66,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id); 
-        $user->update($request->input());
-        return response()->json([
-            'message_type' => __('success'),
-            'message_text' => __('Information updated'),
-            'data' => $user,
-        ]);
+        //
     }
 
     /**

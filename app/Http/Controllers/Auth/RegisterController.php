@@ -19,11 +19,9 @@ class RegisterController extends Controller
      */
     public function store(RegisterStoreRequest $request){
         $pass = random_int(100000, 999999);
-        $newUser = User::create([
-            'name' => $request->input('name').$pass,
-            'email' => $request->input('email'),
+        $newUser = User::create(array_merge($request->input(), [
             'password' => Hash::make($pass),
-        ]);
+        ]));
 
         Mail::to($request->input('email'))->queue(new TemporalPassword($pass));
 
