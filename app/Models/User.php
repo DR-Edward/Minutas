@@ -39,6 +39,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'friends',
+        'myFriends',
+        'friendOf'
     ];
 
     /**
@@ -49,4 +52,55 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'full_name',
+        'friends',
+    ];
+
+    /**
+     * Get the full name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getFullNameAttribute($value)
+    {
+        return $this->name." ".$this->apellido_paterno." ".$this->apellido_materno;
+    }
+    
+    /**
+     * Get the full list of friends.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getFriendsAttribute($value)
+    {
+        return array_merge($this->myFriends->toArray(), $this->friendOf->toArray());
+    }
+    
+    /**
+     * List of friends that I sended an invitation
+     * 
+     */
+    public function myFriends()
+    {
+        return $this->belongsToMany(User::class, 'amigos', 'solicitante_id', 'solicitado_id');
+    }
+
+    /**
+     * List of friends that I recived an invitation
+     * 
+     */
+    public function friendOf()
+    {
+        return $this->belongsToMany(User::class, 'amigos', 'solicitado_id', 'solicitante_id');
+    }
+    
 }

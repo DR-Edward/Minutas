@@ -30,11 +30,13 @@ Route::group([
     });
 });
 
-// ROUTES -> Users
 Route::group([
     'middleware' => 'auth:api',
     'namespace' => 'App\Http\Controllers'
 ], function() {
+    // ROUTES -> Users
+    Route::apiResource('users', 'UserController');
 
-    Route::apiResource('user', 'UserController');
+    // ROUTES -> Amigos
+    Route::apiResource('amigos', 'AmigoController');
 });

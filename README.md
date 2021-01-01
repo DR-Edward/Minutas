@@ -21,11 +21,11 @@
 | done  | Se requiere un WS que envíe un correo a la dirección de email del usuario con un código de 6 dígitos random que servirá como contraseña temporal para iniciar sesión.
 | done  | Se requiere un WS para actualizar la información del usuario.
 | done  | Se requiere un WS para actualizar solo la contraseña del usuario, con verificación de la contraseña anterior, si la contraseña no coincide, no podrá actualizar la contraseña.
-| in process  | Se requiere un WS para poder agregar a un amigo a la lista de amigos.
-|   | Se requiere un WS para poder rechazar o aceptar a un amigo.
-|   | Se requiere un WS para poder eliminar un amigo.
-|   | Se requiere un WS que muestre un listado de todos los amigos que el usuario logueado tenga.
-|   | Se requiere un WS que permita la creación de una minuta, cada minuta llevará múltiples acuerdos, múltiples participantes, los cuales podrán ser amigos anteriormente agregados y podrá contener o no evidencias (fotografías).
+| done  | Se requiere un WS para poder agregar a un amigo a la lista de amigos.
+| done  | Se requiere un WS para poder rechazar o aceptar a un amigo.
+| done  | Se requiere un WS para poder eliminar un amigo.
+| done  | Se requiere un WS que muestre un listado de todos los amigos que el usuario logueado tenga.
+| in process  | Se requiere un WS que permita la creación de una minuta, cada minuta llevará múltiples acuerdos, múltiples participantes, los cuales podrán ser amigos anteriormente agregados y podrá contener o no evidencias (fotografías).
 |   | Se requiere un WS que muestre un listado de las minutas donde el usuario haya sido participante o creador de la minuta.
 |   | Se requiere un WS para poder actualizar una minuta en la cual el usuario logueado haya sido el creador.
 
