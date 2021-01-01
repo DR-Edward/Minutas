@@ -17,7 +17,7 @@ class CreateAmigosTable extends Migration
             $table->id();
             $table->foreignId('solicitante_id')->constrained('users');
             $table->foreignId('solicitado_id')->constrained('users');
-            $table->boolean('aceptada');
+            $table->boolean('aceptada')->nullable();
             $table->timestamps();
         });
     }
