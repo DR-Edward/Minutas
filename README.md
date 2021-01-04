@@ -25,9 +25,9 @@
 | done  | Se requiere un WS para poder rechazar o aceptar a un amigo.
 | done  | Se requiere un WS para poder eliminar un amigo.
 | done  | Se requiere un WS que muestre un listado de todos los amigos que el usuario logueado tenga.
-| in process  | Se requiere un WS que permita la creación de una minuta, cada minuta llevará múltiples acuerdos, múltiples participantes, los cuales podrán ser amigos anteriormente agregados y podrá contener o no evidencias (fotografías).
-|   | Se requiere un WS que muestre un listado de las minutas donde el usuario haya sido participante o creador de la minuta.
-|   | Se requiere un WS para poder actualizar una minuta en la cual el usuario logueado haya sido el creador.
+| done  | Se requiere un WS que permita la creación de una minuta, cada minuta llevará múltiples acuerdos, múltiples participantes, los cuales podrán ser amigos anteriormente agregados y podrá contener o no evidencias (fotografías).
+| done  | Se requiere un WS que muestre un listado de las minutas donde el usuario haya sido participante o creador de la minuta.
+| done  | Se requiere un WS para poder actualizar una minuta en la cual el usuario logueado haya sido el creador.
 
 ## Importation
 
