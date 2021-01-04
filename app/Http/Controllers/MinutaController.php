@@ -84,7 +84,7 @@ class MinutaController extends Controller
      */
     public function update(MinutaUpdateRequest $request, $id)
     {
-        $response = Minuta::storeOrUpdate($request->persist()['in'], $request->persist()['out'], $request->input(), $id);
+        $response = Minuta::storeOrUpdate($request->persist()['in'], $request->persist()['out'], $request->all(), $id);
 
         return response()->json([
             'message_type' => __('success'),
