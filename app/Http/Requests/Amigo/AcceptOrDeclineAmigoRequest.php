@@ -26,6 +26,7 @@ class AcceptOrDeclineAmigoRequest extends FormRequest
     {
         return [
             "aceptada" => [
+                'required',
                 "boolean",
             ],
         ];
