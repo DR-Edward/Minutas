@@ -31,4 +31,4 @@
 
 ## Importation
 
-* Insomnia endpoints collection <a id="raw-url" href="https://raw.githubusercontent.com/DR-Edward/Minutas/master/importation/dev/Insomnia_2020-12-31.json">Raw file to download</a>
+* Insomnia endpoints collection <a id="raw-url" href="https://raw.githubusercontent.com/DR-Edward/Minutas/master/importation/dev/Insomnia_2021-01-04.json">Raw file to download</a>
