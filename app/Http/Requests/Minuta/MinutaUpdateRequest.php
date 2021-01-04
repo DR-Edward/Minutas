@@ -75,6 +75,9 @@ class MinutaUpdateRequest extends FormRequest
                 'required',
                 'date_format:Y-m-d',
             ],
+            "evidencias" => [
+                'array',
+            ],
         ];
     }
 
