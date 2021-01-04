@@ -18,15 +18,87 @@ class AmigoController extends Controller
      */
     public function index()
     {
-        return User::whereHas('myFriends', function ($q) {
-                $q->where('solicitante_id', 1)
-                    ->where('aceptada', true);
-            })
-            ->orWhereHas('friendOf', function ($q) {
-                $q->where('solicitado_id', 1)
-                    ->where('aceptada', true);
-            })
-            ->get()->makeVisible('friends');
+        $participantes = [2, 3, 4];
+        $userId = \Auth::id();
+
+
+        $amigos = User::whereHas('myFriends', function ($q) use($userId){
+            $q->where('solicitante_id', $userId);
+        })
+        ->orWhereHas('friendOf', function ($q) use($userId){
+            $q->where('solicitado_id', $userId);
+        })
+        ->get()
+        ->makeVisible('friends')
+        ->first()
+        ->friends
+        ;
+
+        $id_array = array_map(function ($element) {
+            return $element['id'];
+        }, $amigos); 
+
+        return array_intersect($id_array, $participantes);
+        return array_diff_assoc($participantes, $id_array);
+
+        
+        // return User::
+        // where('id', '!=', $userId)
+        // ->whereHas('myFriends', function($q) use ($userId, $participantes) {
+        //     $q->where('amigos.solicitante_id', $userId)
+        //         ->whereIn('amigos.solicitado_id', $participantes);
+        // })
+        // ->orWhereHas('friendOf', function($q) use ($userId, $participantes) {
+        //     $q->where('solicitante_id', $userId)
+        //     ->whereIn('amigos.solicitado_id', $participantes); 
+        // })
+        // ->where('id', '!=', $userId)
+        // ->with(['myFriends', 'friendOf'])
+        // ->get()
+        // ->makeVisible(['myFriends', 'friendOf'])
+        ;
+
+        //este se ve prometedor
+        // $amigos = Amigo::where(function($q) use($participantes, $userId) {
+        //         $q->where('aceptada', true)
+        //             ->where('solicitante_id', $userId)
+        //             ->whereIn('solicitado_id', $participantes);
+        //     })
+        //     ->orWhere(function($q) use($participantes, $userId){
+        //         $q->where('aceptada', true)
+        //             ->where('solicitado_id', $userId)
+        //             ->whereIn('solicitante_id', $participantes);
+        //     })
+        //     ->get();
+        
+        
+        // return $amigos;
+
+
+        // return User::where('id', '!=', $userId)
+        //     ->whereHas('myFriends', function ($q) use ($participantes, $userId) {
+        //         $q->where('amigos.solicitante_id', $userId)
+        //             ->whereIn('amigos.solicitado_id', $participantes);
+        //     })
+        //     ->orWhereHas('friendOf')
+        //     ->with(['myFriends', 'friendOf'])
+        //     ->get()
+        //     ->makeVisible(['myFriends', 'friendOf'])
+        //     ;
+
+
+
+
+
+//este es el original de este endpoint
+        // return User::whereHas('myFriends', function ($q) use($userId){
+        //         $q->where('solicitante_id', $userId);
+        //     })
+        //     ->orWhereHas('friendOf', function ($q) use($userId){
+        //         $q->where('solicitado_id', $userId);
+        //     })
+        //     ->get()
+        //     ->makeVisible('friends');
     }
 
     /**

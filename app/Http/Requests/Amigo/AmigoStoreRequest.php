@@ -62,7 +62,6 @@ class AmigoStoreRequest extends FormRequest
             if (count($amigo) > 0) {
                 $validator->errors()->add('solicitado_id', __('The provided id does match with one of your friends.'));
             }
-
         });
     }
 }

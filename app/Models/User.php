@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -41,7 +42,9 @@ class User extends Authenticatable
         'remember_token',
         'friends',
         'myFriends',
-        'friendOf'
+        'friendOf',
+        'usuario_id',
+        'nombre'
     ];
 
     /**
@@ -59,6 +62,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = [
+        'usuario_id',
+        'nombre',
         'full_name',
         'friends',
     ];
@@ -72,6 +77,28 @@ class User extends Authenticatable
     public function getFullNameAttribute($value)
     {
         return $this->name." ".$this->apellido_paterno." ".$this->apellido_materno;
+    }
+    
+    /**
+     * Get the id names usuario_id.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getUsuarioIdAttribute($value)
+    {
+        return $this->id;
+    }
+    
+    /**
+     * Get the name named as nombre.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getNombreAttribute($value)
+    {
+        return $this->name;
     }
     
     /**
@@ -91,7 +118,7 @@ class User extends Authenticatable
      */
     public function myFriends()
     {
-        return $this->belongsToMany(User::class, 'amigos', 'solicitante_id', 'solicitado_id');
+        return $this->belongsToMany(User::class, 'amigos', 'solicitante_id', 'solicitado_id')->where('aceptada', true);
     }
 
     /**
@@ -100,7 +127,7 @@ class User extends Authenticatable
      */
     public function friendOf()
     {
-        return $this->belongsToMany(User::class, 'amigos', 'solicitado_id', 'solicitante_id');
+        return $this->belongsToMany(User::class, 'amigos', 'solicitado_id', 'solicitante_id')->where('aceptada', true);
     }
     
 }

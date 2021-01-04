@@ -39,4 +39,7 @@ Route::group([
 
     // ROUTES -> Amigos
     Route::apiResource('amigos', 'AmigoController');
+
+    // ROUTES -> Minutas
+    Route::apiResource('minutas', 'MinutaController');
 });
